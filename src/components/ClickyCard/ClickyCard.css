@@ -21,17 +21,17 @@ img {
   margin-top: 5%;
   width: 90%
 }
-
+/* 
 .card > .content {
   padding-left: 1rem;
   padding-right: 1rem;
   font-size: 15px;
-}
+} */
 
-.card > .content > ul {
+/* .card > .content > ul {
   list-style-type: none;
-}
+} */
 
-.card > .content > ul > li {
+/* .card > .content > ul > li {
   margin-top: 18px;
-}
+} */

@@ -2,21 +2,25 @@
     {
         "id": 1,
         "name": "Egg Squirrel!  Squirrel Egg?  WTH?",
-        "image": "https://media2.giphy.com/media/3o7TKxDoGXcehl4wgg/giphy.gif"
+        "image": "https://media2.giphy.com/media/3o7TKxDoGXcehl4wgg/giphy.gif",
+        "clicked": false
     },
     {
         "id": 2,
         "name": "Pearly Whites",
-        "image": "https://media1.giphy.com/media/3o7aD1R2taKLPVTwWY/giphy.gif"
+        "image": "https://media1.giphy.com/media/3o7aD1R2taKLPVTwWY/giphy.gif",
+        "clicked": false
     },
     {
         "id": 3,
         "name": "Intesity",
-        "image": "https://media1.giphy.com/media/6NekEsqSb3B4s/giphy.gif"
+        "image": "https://media1.giphy.com/media/6NekEsqSb3B4s/giphy.gif",
+        "clicked": false
     },
     {
         "id": 4,
         "name": "Just because...",
-        "image": "https://media3.giphy.com/media/mhHIx0alOzPGw/giphy.gif"
+        "image": "https://media3.giphy.com/media/mhHIx0alOzPGw/giphy.gif",
+        "clicked": false
     }
 ]

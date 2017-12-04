@@ -8,6 +8,7 @@ const ClickyCard = (props) => (
         dataid={props.id}
         alt={props.name}
         src={props.image}
+        onClick={() => props.clickTarget(props.id)}
       />
     </div>
   </div>
