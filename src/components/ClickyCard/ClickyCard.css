@@ -14,24 +14,41 @@
   height: 90%;
   overflow: hidden;
   text-align: center;
-  background:#6CADDC;
+  background:rgb(5, 88, 148);
 }
 
 img {
   margin-top: 5%;
   width: 90%
 }
-/* 
-.card > .content {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  font-size: 15px;
-} */
 
-/* .card > .content > ul {
-  list-style-type: none;
-} */
+.img-container {
+  position: relative;
+  border: none;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
 
-/* .card > .content > ul > li {
-  margin-top: 18px;
-} */
+.img-container:after {
+  content: "";
+  background: rgb(126, 28, 118);
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px!important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.img-container:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}

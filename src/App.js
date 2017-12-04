@@ -32,15 +32,18 @@ class App extends Component {
             this.setState({highScore: this.state.score});
           }
           // TODO randomize and display a start screen (???)
-          console.log(`Score:  ${this.state.score}`);
-          console.log(`High Score:  ${this.state.highScore}`);
-          alert(`Restart Game!  Score: ${this.state.score}  High Score: ${this.state.highScore}`);
+          // TODO remove alert
+          // alert(`Restart Game!  Score: ${this.state.score}  High Score: ${this.state.highScore}`);
           this.setState({score: 0});
           return false;
         }
         else {
           this.setState({score: this.state.score + 1});
-          console.log(`Score up! Now:  ${this.state.score}`);
+          if (this.state.score > this.state.highScore) {
+            // record high score (if needed)
+            this.setState({highScore: this.state.score});
+          }
+          // TODO figure out why high score lags by 1 pt
           // continue game and set this target to true
           target.clicked = true;
           // TODO randomize the pictures    
@@ -52,7 +55,7 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-      <Header />
+      <Header  score={this.state.score} highScore={this.state.highScore} />
       {/* <Navbar /> */}
       {clickyTargets.map((target) => {
         return <ClickyCard 
@@ -86,9 +89,5 @@ function shuffle(array) {
   }
   return copy;
 }
-
-// gameReset = () => {
-//   return 1;
-// }
 
 export default App;

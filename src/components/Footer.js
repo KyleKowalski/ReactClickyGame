@@ -3,7 +3,7 @@ import "../style/style.css";
 
 const Footer = () => (
   <footer className="footer">
-    <h1>Footer</h1>
+    <span><h1>&copy; Kyle Kowalski ✌</h1></span>
   </footer>
 );
 

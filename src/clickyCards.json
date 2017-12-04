@@ -22,5 +22,29 @@
         "name": "Just because...",
         "image": "https://media3.giphy.com/media/mhHIx0alOzPGw/giphy.gif",
         "clicked": false
+    },
+    {
+        "id": 5,
+        "name": "Buuuurrnn!!",
+        "image": "https://media.giphy.com/media/3ofT5TouUCNBrzFKFi/giphy.gif",
+        "clicked": false
+    },
+    {
+        "id": 6,
+        "name": "Hah!",
+        "image": "https://media1.giphy.com/media/oeGgcmHVHLVCg/giphy.gif",
+        "clicked": false
+    },
+    {
+        "id": 7,
+        "name": "Awww Leia... (Carrie)",
+        "image": "https://media.giphy.com/media/tk2vlgb27IPni/giphy.gif",
+        "clicked": false
+    },
+    {
+        "id": 8,
+        "name": "Gahh!",
+        "image": "https://media0.giphy.com/media/yMNxjDum4c9Ik/giphy.gif",
+        "clicked": false
     }
 ]

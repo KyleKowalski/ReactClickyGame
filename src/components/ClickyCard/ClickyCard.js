@@ -3,12 +3,10 @@ import "./ClickyCard.css";
 
 const ClickyCard = (props) => (
   <div className="card">
-    <div className="img-container">
+    <div className="img-container" dataid={props.id} onClick={() => props.clickTarget(props.id)} >
       <img
-        dataid={props.id}
         alt={props.name}
         src={props.image}
-        onClick={() => props.clickTarget(props.id)}
       />
     </div>
   </div>
