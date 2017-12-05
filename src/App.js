@@ -47,9 +47,12 @@ class App extends Component {
           // continue game and set this target to true
           target.clicked = true;
         }
+        if (this.state.score >= this.state.highScore) {
+          console.log(`score" ${this.state.score} - highscore: ${this.state.highScore}`);
+          this.updateHighScore(); 
+        }
       }
     });
-    this.checkHighScore();
   }
 
   // Shuffle brought to you by:  https://bost.ocks.org/mike/shuffle/
@@ -73,14 +76,12 @@ class App extends Component {
     this.setState({clickyTargets: copy});
   }
 
-  checkHighScore = () => {
-    if (this.state.score >= this.state.highScore) {
-      console.log(`current score: ${this.state.score} - and high: ${this.state.highScore}`);
-      // record high score (if needed)
-      this.setState((prevState) => ({
-        highScore: prevState.score
-      }));
-    }
+  updateHighScore = () => {
+    // record high score (if needed)
+    console.log(`UPPPDDATING high score`)
+    this.setState((prevState) => ({
+      highScore: prevState.score
+    }));
   }
 
   render() {
