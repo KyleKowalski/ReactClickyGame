@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
 import './App.css';
 import Wrapper from './components/Wrapper';
 import ClickyCard from './components/ClickyCard';
 import clickyTargets from './clickyCards.json';
-// import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -16,7 +14,6 @@ class App extends Component {
   }
 
   clickTarget = id => {
-    console.log(`Clicked: ${id}`);
     this.state.clickyTargets.forEach((target) => {
       if (target.id === id){
         // Player lost (clicked same thing again)
@@ -30,12 +27,11 @@ class App extends Component {
             // reset clicks so game can start again
             target.clicked = false;
           });
-
-          // TODO randomize and display a start screen (???)
           this.setState({score: 0});
           return false;
         }
         // Player did NOT lose - did we win?
+        // TODO this doesn't work as we're getting a dated score - thow this to another layer
         else if (this.state.score === this.state.clickyTargets.length){
           console.log(`All elements have been clicked - display 'you won!'`);
           // TODO do something for a win and reset the game
@@ -48,7 +44,6 @@ class App extends Component {
           target.clicked = true;
         }
         if (this.state.score >= this.state.highScore) {
-          console.log(`score" ${this.state.score} - highscore: ${this.state.highScore}`);
           this.updateHighScore(); 
         }
       }
@@ -70,15 +65,10 @@ class App extends Component {
         n--;
       }
     }
-    
-    // console.log(`New card array:  ${copy}`);
-    // copy.forEach((item) => {console.log(item)});
     this.setState({clickyTargets: copy});
   }
 
   updateHighScore = () => {
-    // record high score (if needed)
-    console.log(`UPPPDDATING high score`)
     this.setState((prevState) => ({
       highScore: prevState.score
     }));
@@ -88,8 +78,7 @@ class App extends Component {
     return (
       <Wrapper>
         <Header score={this.state.score} highScore={this.state.highScore} />
-        {/* <Navbar /> */}
-        {clickyTargets.map((target) => {
+        {this.state.clickyTargets.map((target) => {
           return <ClickyCard 
                   {...target}
                   key={target.id}
