@@ -10,11 +10,16 @@ class Modal extends React.Component {
 
         let modalStyle = {
             position: 'absolute',
-            top: '50%',
-            left: '50%',
+            top: '40%',
+            left: '40%',
             transform: 'translate(-50%, -50%)',
             zIndex: '9999',
-            background: '#fff'
+            margin: '10%',
+            borderRadius: '5px',
+            border: '5px solid white',
+            backgroundColor: 'rgb(81, 8, 81)',
+            color: 'rgb(145, 153, 201)',
+            textAlign: 'center'
         }
 
         if (this.props.width && this.props.height) {
@@ -69,4 +74,3 @@ class Modal extends React.Component {
 }
 
 export default Modal;
-// ReactDOM.render(<App/>, document.getElementById('app'))

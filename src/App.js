@@ -14,7 +14,8 @@ class App extends Component {
     clickyTargets: clickyTargets,
     isModalOpen: false,
     modalTitle: 'Default Title',
-    modalText: 'Default Text'
+    modalText: 'Default Text',
+    modalScoreText: 'Default Score'
   }
 
   clickTarget = id => {
@@ -27,7 +28,8 @@ class App extends Component {
           // TODO show game over modal (high score - etc)
           this.setState({
             modalText: `You've lost and clicked the same card twice!  Click outside the box to play again!`,
-            modalTitle: 'Oops, try again!'
+            modalTitle: 'Oops, try again!',
+            modalScoreText: `Final Score:  ${this.state.score} out of ${this.state.clickyTargets.length}`
           })
           this.openModal();
           this.resetGame();
@@ -79,7 +81,8 @@ class App extends Component {
     if (this.state.score === this.state.clickyTargets.length) {
       this.setState({
         modalText: `You've won!  Click outside the box to play again!`,
-        modalTitle: 'Congratulations!'
+        modalTitle: 'Congratulations!',
+        modalScoreText: `This is quite the achievement, getting them all correct!`
       })
       this.openModal();
       this.resetGame();
@@ -122,6 +125,7 @@ class App extends Component {
         <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
           <h1>{this.state.modalTitle}</h1>
           <p>{this.state.modalText}</p>
+          <p>{this.state.modalScoreText}</p>
           <p><button onClick={() => this.closeModal()}>Close</button></p>
         </Modal>
         <Footer />

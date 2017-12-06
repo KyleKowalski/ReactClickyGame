@@ -5,7 +5,9 @@ body {
 .header, .footer {
     width: 100%;
     text-align: center;
-    background-color: blueviolet;
+    background-color: rgb(81, 8, 81);
+    color: rgb(145, 153, 201);
+    border-radius: 5px;
 }
 
 .header {
