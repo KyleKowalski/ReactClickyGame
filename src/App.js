@@ -19,8 +19,8 @@ class App extends Component {
         // Player lost (clicked same thing again)
         if (target.clicked) {
           console.log(`GAME OVER!  (previously clicked)`);
-          alert (`Game Over!`);
 
+          alert (`Game Over!  Score: ${this.state.score} - High Score: ${this.state.highScore}`);
           // TODO show game over modal (high score - etc)
 
           this.state.clickyTargets.forEach((target) => {
@@ -32,14 +32,15 @@ class App extends Component {
         }
         // Player did NOT lose - did we win?
         // TODO this doesn't work as we're getting a dated score - thow this to another layer
-        else if (this.state.score === this.state.clickyTargets.length){
-          console.log(`All elements have been clicked - display 'you won!'`);
-          // TODO do something for a win and reset the game
-          return false;
-        }
+        // else if (this.checkForWin()){
+        //   console.log(`All elements have been clicked - display 'you won!'`);
+        //   // TODO do something for a win and reset the game
+        //   return false;
+        // }
         // Player did NOT lose and did NOT win - so we continue
         else {
-          this.setState({score: this.state.score + 1});
+          this.updateScore();
+          
           // continue game and set this target to true
           target.clicked = true;
         }
@@ -69,9 +70,22 @@ class App extends Component {
   }
 
   updateHighScore = () => {
-    this.setState((prevState) => ({
-      highScore: prevState.score
+    this.setState((newState) => ({
+      highScore: newState.score
     }));
+  }
+
+  updateScore = () => {
+    this.setState((newState) => ({
+      score: newState.score + 1
+    }), () => this.checkForWin());
+  }
+
+  checkForWin = () => {
+    console.log(`checking for win - score: ${this.state.score} out of ${this.state.clickyTargets.length}`)
+    if (this.state.score === this.state.clickyTargets.length) {
+      alert(`You've won!!!!`);
+    }
   }
 
   render() {
