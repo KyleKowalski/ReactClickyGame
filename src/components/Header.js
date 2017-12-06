@@ -4,11 +4,8 @@ import "../style/style.css";
 const Header = (props) => (
   <header className="header">
     <h1>React Clicky Game!</h1>
-    <h5>
-      <div>Rules</div>
-      <div>Score: {props.score}</div>
-      <div>High Score: {props.highScore}</div>
-    </h5>
+    <h4>Rules: Click the images one at a time without repeating - click all images to win!</h4>
+    <h3>Score: {props.score} - High Score: {props.highScore}</h3>
   </header>
 );
 
