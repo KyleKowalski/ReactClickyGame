@@ -2,7 +2,7 @@
   "name": "reactclickygame",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kylekowalski.github.io/reactclickygame",
+  "homepage": "https://kylekowalski.github.io/ReactClickyGame",
   "dependencies": {
     "gh-pages": "^1.1.0",
     "react": "^16.2.0",
